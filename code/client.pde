@@ -14,14 +14,17 @@ void clientEvent(Client client) {
     println("Receiving:" + in);
     int[] vals = int(splitTokens(in, ",\n"));
     
-    fill(0, 100);
+    fill(255, 0, 0, 100);
     noStroke();
-    ellipse(vals[0], vals[1], 16, 16);
+    rect(vals[0], vals[1], 16, 16);
     println(vals);
   }
 }
 
 void draw() {
+}
+
+void mouseDragged() {
   String out = mouseX + "," + mouseY + "\n";
   client.write(out);
   
